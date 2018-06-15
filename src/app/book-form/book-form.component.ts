@@ -11,7 +11,7 @@ export class BookFormComponent implements OnInit {
   submitted = false;
   authors = ['Sidney Sheldon', 'Robin Cook', 'Seuss', 'Leo Tolstoy', 'Jeffery Archer', 'Dan Brown'];
 
-  model = new Book(1, 'Suspense', this.authors[0]);
+  model = new Book(1, 'Blood Line', this.authors[1]);
 
   constructor() { }
 
@@ -21,5 +21,11 @@ export class BookFormComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
   }
+
+
+  get diagnostic(): string {
+    return JSON.stringify(this.model);
+  }
+
 
 }

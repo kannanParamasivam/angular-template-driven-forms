@@ -1,26 +1,25 @@
 <div class="container">
   <h1>Book Form</h1>
-  <form>
 
+  <form #bookForm="ngForm">
+    {{diagnostic}}
     <div class="form-group">
       <label for="title">Title</label>
-      <input type="text" class="form-control" id="title" required>
+      <input type="text" class="form-control" id="title" name="title" [(ngModel)]="model.title" required> Title is {{model.title}}
     </div>
 
     <div class="form-group">
       <label for="category">Category</label>
-      <input type="text" class="form-control" id="category">
+      <input type="text" class="form-control" id="category" [(ngModel)]="model.category" name="category">
     </div>
 
     <div class="form-group">
       <label for="author">Author</label>
-      <select class="form-control" id="author" required #author>
+      <select class="form-control" id="author" required #author [(ngModel)]="model.author" name="author">
         <option *ngFor="let author of authors" [value]="author">{{author}}</option>
       </select>
     </div>
-    <!-- {{author.value}} -->
-
-
+    Author is {{model.author}}
     <button type="submit" class="btn btn-success">Submit</button>
 
   </form>

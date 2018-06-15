@@ -27,5 +27,9 @@ export class BookFormComponent implements OnInit {
     return JSON.stringify(this.model);
   }
 
+   newBook() {
+    this.model = new Book(3,'','');
+  }
+
 
 }

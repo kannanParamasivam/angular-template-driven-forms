@@ -3,9 +3,12 @@
 
   <form #bookForm="ngForm">
     {{diagnostic}}
+    
     <div class="form-group">
       <label for="title">Title</label>
-      <input type="text" class="form-control" id="title" name="title" [(ngModel)]="model.title" required> Title is {{model.title}}
+      <input type="text" class="form-control" id="title" name="title" [(ngModel)]="model.title" required #title> 
+      Title is {{model.title}} <br>
+      Control State class is {{title.className}}
     </div>
 
     <div class="form-group">
@@ -20,6 +23,7 @@
       </select>
     </div>
     Author is {{model.author}}
+
     <button type="submit" class="btn btn-success">Submit</button>
 
   </form>

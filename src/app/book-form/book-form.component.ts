@@ -16,6 +16,7 @@ export class BookFormComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.submitted=false;
   }
 
   onSubmit() {
@@ -27,8 +28,9 @@ export class BookFormComponent implements OnInit {
     return JSON.stringify(this.model);
   }
 
-   newBook() {
-    this.model = new Book(3,'','');
+  newBook() {
+    this.model = new Book(3, '', '');
+    this.submitted = false;
   }
 
 

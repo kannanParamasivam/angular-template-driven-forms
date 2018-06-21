@@ -4,15 +4,13 @@ import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from './app.component';
 import { BookFormComponent } from './book-form/book-form.component';
-import { ForbiddenValueValidatorDirective } from './forbidden-value-validator.directive';
-import { ForbiddenValueDirective } from './validators/forbidden-value.directive';
+import { ForbiddenValueValidatorDirective } from './shared/forbidden-value-validator.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookFormComponent,
-    ForbiddenValueValidatorDirective,
-    ForbiddenValueDirective
+    ForbiddenValueValidatorDirective
   ],
   imports: [
     BrowserModule,

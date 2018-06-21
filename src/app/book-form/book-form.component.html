@@ -10,7 +10,8 @@
 
         <label for="title">Title</label>
 
-        <input type="text" class="form-control" id="title" name="title" [(ngModel)]="model.title" required minlength="4" #title="ngModel"> Title is {{model.title}}
+        <input type="text" class="form-control" id="title" name="title" [(ngModel)]="model.title" required minlength="4"
+        appForbiddenValueValidator='article' #title="ngModel"> Title is {{model.title}}
         <br> Control State class is {{title.className}}
         <br>
 
@@ -21,9 +22,9 @@
           <div *ngIf="title.errors.minlength">
             Title mustbe atleast 4 characters long
           </div>
-          <!-- <div ng-if="title.errors.forbiddenTitle">
-            Name can not be {{title.value}}
-          </div> -->
+          <div *ngIf="title.errors.forbiddenValueProvided">
+            Title can not be {{title.value}}
+          </div>
         </div>
 
       </div>
